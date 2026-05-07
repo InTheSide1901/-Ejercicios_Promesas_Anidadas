@@ -39,5 +39,6 @@ function transferir(monto) {
       console.log("Operación finalizada!");
     });
 }
+// transferir(900)
 
-transferir(500);
+module.exports = {transferir};

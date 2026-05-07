@@ -1,6 +1,6 @@
 require('colors')
 
-let alumno = {
+const alumno = {
     Nombre: "Diego",
     Edad: 25,
     inscriptoAMaterias: ["Matematicas", "Electronica", "Programación"],
@@ -47,6 +47,7 @@ function insribirAlumno(objAlumno, materia){
         })
     }
 
-insribirAlumno(alumno, "quimica")
+// insribirAlumno(alumno, "quimica")
 
+module.exports = { insribirAlumno,alumno}
 

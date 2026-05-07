@@ -70,19 +70,29 @@ function imprimirEtiqueta(nombreProducto) {
   });
 }
 
-validarStock("Mouse", productos)
-  .then(producto => {
-    return realizarVenta(producto);
-  })
-  .then(productoVendido => {
-    return imprimirEtiqueta(productoVendido.nombreProducto);
-  })
-  .then(mensaje => {
-    console.log(mensaje);
-  })
-  .catch(error => {
-    console.log(error);
-  })
-  .finally(() => {
-    console.log("Operación finalizada");
-  });
+function venderProducto(nombreProducto) {
+
+  validarStock(nombreProducto, productos)
+
+    .then((producto) => {
+      return realizarVenta(producto)
+    })
+
+    .then((productoVendido) => {
+      return imprimirEtiqueta(productoVendido.nombreProducto)
+    })
+
+    .then((mensaje) => {
+      console.log(mensaje)
+    })
+
+    .catch((error) => {
+      console.log(error)
+    })
+
+    .finally(() => {
+      console.log("Operación finalizada")
+    })
+}
+// venderProducto("Mouse")
+module.exports = {venderProducto}
